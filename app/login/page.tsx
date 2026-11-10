@@ -1,0 +1,3 @@
+import LoginForm from '@/components/login-form'
+import { Suspense } from 'react'
+export default function Login(){return <main className="auth-layout"><section className="auth-aside"><div className="auth-logo">✦ <span>IELTS ATLAS</span></div><div className="auth-hero"><span className="eyebrow">YOUR PREPARATION COMPANION</span><h1>Progress is built<br/>one test at a time.</h1><p>One beautiful place to track Cambridge mocks, understand your mistakes, and move closer to your target band.</p><div className="auth-quote">“What gets measured gets improved.”</div></div><div className="auth-foot">ACADEMIC PRACTICE · PERSONAL ANALYTICS</div></section><section className="auth-panel"><Suspense fallback={<p>Loading login...</p>}><LoginForm /></Suspense></section></main>}

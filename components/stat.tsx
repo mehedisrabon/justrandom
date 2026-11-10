@@ -1,0 +1,2 @@
+import { ReactNode } from 'react'
+export default function Stat({label,value,detail,icon}:{label:string;value:string|number;detail?:string;icon:ReactNode}){return <div className="stat-card"><div className="stat-top"><span>{label}</span><span className="stat-icon">{icon}</span></div><div className="stat-number">{value}</div><span className="stat-detail">{detail??'Your progress so far'}</span></div>}
