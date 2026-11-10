@@ -1,6 +1,6 @@
+import { getData } from '@/lib/data-server'
 import AppShell from '@/components/app-shell'
 import PracticeForm from '@/components/practice-form'
-import { getData } from '@/lib/data'
 import { deletePractice } from '@/app/actions'
 import { Trash2 } from 'lucide-react'
 export const dynamic='force-dynamic'

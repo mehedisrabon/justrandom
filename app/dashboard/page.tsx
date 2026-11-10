@@ -1,8 +1,9 @@
+import { getData } from '@/lib/data-server'
 import Link from 'next/link'
 import AppShell from '@/components/app-shell'
 import Stat from '@/components/stat'
 import { TrendChart, SkillChart } from '@/components/charts'
-import { getData, pct, SKILLS } from '@/lib/data'
+import { pct, SKILLS } from '@/lib/data'
 import { BookOpen, ChartNoAxesCombined, CircleCheck, Target, ArrowUpRight } from 'lucide-react'
 export const dynamic='force-dynamic'
 export default async function Dashboard(){

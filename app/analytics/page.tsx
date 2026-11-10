@@ -1,6 +1,7 @@
+import { getData } from '@/lib/data-server'
 import AppShell from '@/components/app-shell'
 import { AccuracyChart, SkillChart, TrendChart } from '@/components/charts'
-import { getData, pct, SKILLS } from '@/lib/data'
+import { pct, SKILLS } from '@/lib/data'
 export const dynamic='force-dynamic'
 export default async function Analytics(){
  const {sessions,breakdowns,user}=await getData()

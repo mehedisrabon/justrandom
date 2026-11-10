@@ -1,7 +1,8 @@
 'use server'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
-import { getAuth, QUESTION_TYPES, SKILLS, estimateBand, type Skill } from '@/lib/data'
+import { getAuth } from '@/lib/data-server'
+import { QUESTION_TYPES, SKILLS, estimateBand, type Skill } from '@/lib/data'
 
 function intField(form: FormData, name: string, min: number, max: number, optional = false): number | null {
  const raw = String(form.get(name) ?? '').trim()

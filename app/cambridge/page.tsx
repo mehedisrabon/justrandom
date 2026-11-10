@@ -1,5 +1,6 @@
+import { getData } from '@/lib/data-server'
 import AppShell from '@/components/app-shell'
-import { getData, SKILLS, pct } from '@/lib/data'
+import { SKILLS, pct } from '@/lib/data'
 import { Check, Minus, BookOpen } from 'lucide-react'
 export const dynamic='force-dynamic'
 export default async function Cambridge(){
