@@ -96,3 +96,72 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,
 .empty-inline{color:#839188}
 @media(max-width:900px){.settings-grid{grid-template-columns:1fr}.account-card{align-items:center}}
 @media(max-width:720px){.sidebar{padding:12px 14px 10px}.brand{padding-bottom:9px}.brand-symbol{width:30px;height:30px;font-size:20px}.sidebar-nav a[aria-current="page"]{background:#eaf3ec}.topbar{padding:0 17px}.main-content{padding-top:24px}.page-header{margin-bottom:20px}.panel{padding:17px}.stats-grid{gap:10px}.password-panel{padding:19px}.password-form{grid-template-columns:1fr}.password-form .btn{width:100%}.reset-card{padding:25px 20px}}
+
+/* Workspace refresh */
+:root{--ink:#20342b;--muted:#75857c;--line:#e5ebe4;--green:#2c654f;--bg:#f3f6f1;--cream:#eaf1e9;--gold:#b9965e}
+body{background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.app-layout{background:var(--bg)}
+.sidebar{width:260px;padding:27px 18px 22px;border-right-color:#e7ece6;box-shadow:5px 0 24px #20392b05}
+.brand{padding:0 8px 39px;font-size:16px;letter-spacing:.1px}
+.brand-symbol{width:38px;height:38px;display:grid;place-items:center;background:#eaf2eb;border-radius:12px;font-size:22px}
+.brand small{font-size:8px;letter-spacing:1.6px}
+.nav-heading{margin:3px 0 10px;font-size:9px;letter-spacing:1.4px}
+.sidebar-nav{gap:5px}
+.sidebar-nav a{min-height:44px;padding:0 13px;border-radius:10px;gap:12px}
+.sidebar-nav a[aria-current="page"]{background:#edf4ee;color:#28634f;box-shadow:inset 3px 0 #4d8b6a}
+.sidebar-tip{padding:18px;border:1px solid #e4ece4;background:linear-gradient(145deg,#eff5ef,#e9f1e9)}
+.sidebar-tip p{font-size:11px}
+.profile-line{padding-top:17px;margin-top:20px;border-top:1px solid #edf0eb}
+.topbar{height:66px;padding:0 clamp(22px,4.3vw,62px);background:#fff;color:#809086;letter-spacing:1.2px}
+.main-content{max-width:1420px;padding:42px clamp(22px,4.3vw,62px) 72px}
+.page-header{margin-bottom:27px}
+.page-header h1{font-size:clamp(31px,3.2vw,41px);letter-spacing:-1.25px}
+.page-header p{font-size:13px;color:#798a80}
+.eyebrow{font-size:9px;letter-spacing:1.6px;color:#789182}
+.stats-grid{gap:14px}
+.stat-card,.panel,.book-card{border-color:#e6ebe5;border-radius:15px;box-shadow:0 4px 16px #1c352608}
+.stat-card{padding:21px 22px;transition:transform .18s,box-shadow .18s}
+.stat-card:hover,.book-card:hover{transform:translateY(-2px);box-shadow:0 9px 22px #1c35260c}
+.stat-top{font-size:12px;color:#697b70}
+.stat-icon{border-radius:11px;background:#edf4ed;color:#477b60}
+.stat-number{font-size:39px;color:#274737}
+.stat-detail{font-size:11px;color:#85948b}
+.dashboard-grid{gap:17px;margin-top:18px}
+.panel{padding:24px}
+.panel-heading{margin-bottom:17px}
+.panel h2{font-size:22px;letter-spacing:-.35px}
+.chart-area{height:265px}
+.empty-inline{color:#7f8e84}
+.text-link{color:#2f7557}
+.progress-track{height:8px;background:#edf1ec}
+.progress-track span,.book-progress span,.mini-track span{background:linear-gradient(90deg,#4f9270,#72a982)}
+.recent-item{padding:14px 2px;border-color:#edf0ec}
+.recent-book{border-radius:9px;background:#edf3ed}
+.library-grid{gap:15px}
+.book-card{padding:21px;transition:transform .18s,box-shadow .18s}
+.book-number{font-size:37px;color:#2b644d}
+.book-progress{background:#edf1ec}
+.book-table-head{color:#7e9185}
+.done-dot{background:#e5f3e8;color:#347b50}
+.todo-dot{background:#f3f5f1;color:#a7b2a9}
+.practice-form{max-width:1120px}
+.practice-form .panel{padding:27px}
+.section-title{border-color:#e9eee8}
+.section-title p{font-size:13px}
+.practice-form label{font-size:12px;color:#3c5145}
+.practice-form input,.practice-form select,.practice-form textarea{border-color:#dfe7df;border-radius:10px;min-height:47px;transition:border-color .18s,box-shadow .18s}
+.detail-area{background:#f7f9f6;border-color:#e6ece5;border-radius:12px}
+.detail-entry,.question-row{border-color:#e7ece6;border-radius:9px}
+.data-table th{font-size:9px;color:#798a7f}
+.data-table td{padding-top:16px;padding-bottom:16px}
+.skill-chip{background:#eef3ef;border-radius:100px}
+.btn{min-height:45px;border-radius:10px}
+.btn-primary{background:#28634f;box-shadow:0 3px 8px #28634f1c}
+.btn-primary:hover{background:#1f503e;transform:translateY(-1px)}
+.google-button{border-radius:11px}
+.auth-layout{background:#fff}
+.auth-panel{background:linear-gradient(145deg,#fff,#fbfcfa)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #47835d55;outline-offset:2px}
+@media(max-width:900px){.sidebar{width:220px}.main-content{padding-left:28px;padding-right:28px}}
+@media(max-width:720px){.sidebar{width:100%;padding:12px 14px 10px}.brand{padding:0 0 10px}.sidebar-bottom{display:flex;align-items:center;gap:12px;margin-top:8px}.sidebar-tip{display:none}.profile-line{min-width:0;margin:0 auto 0 0;padding:0;border:0}.sidebar-bottom form{flex:none}.logout{padding:8px 10px}.topbar{height:56px}.main-content{padding:25px 17px 46px}.page-header h1{font-size:31px}.panel{padding:18px}.practice-form .panel{padding:19px}.stats-grid{gap:9px}.stat-card{padding:15px}.stat-number{font-size:31px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}

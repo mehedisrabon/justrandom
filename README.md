@@ -18,8 +18,10 @@ A personal IELTS Academic tracker with verified Supabase Auth, Postgres row-leve
 ## 2. Local development
 ```bash
 npm install
-cp .env.example .env.local
-# Edit .env.local: set your Supabase URL and publishable key.
+# Create .env.local with:
+# NEXT_PUBLIC_SUPABASE_URL=your Supabase project URL
+# NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your Supabase publishable key
+# NEXT_PUBLIC_SITE_URL=http://localhost:3000
 npm run dev
 ```
 Visit http://localhost:3000 and sign in with an existing provisioned account or Google. Account creation is disabled in the app UI.
@@ -27,9 +29,9 @@ Visit http://localhost:3000 and sign in with an existing provisioned account or 
 ## 3. Free deployment
 1. Push the project to a **private GitHub repository**. `.env.local` is ignored.
 2. Import it into Vercel using **New Project → Import Git Repository**.
-3. Set environment variables `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` in Vercel.
+3. Set `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, and `NEXT_PUBLIC_SITE_URL` in Vercel. Set the last value to your deployed site origin, such as `https://YOUR-PROJECT.vercel.app` (no trailing slash).
 4. Deploy. Your URL will be `https://YOUR-PROJECT.vercel.app`.
-5. In Supabase **Auth → URL Configuration**, set the **Site URL** to your deployed URL and add `https://YOUR-PROJECT.vercel.app/auth/callback` to the redirect allowlist.
+5. In Supabase **Auth → URL Configuration**, set the **Site URL** to your deployed URL and add `https://YOUR-PROJECT.vercel.app/auth/callback` to the redirect allowlist. For local development, allow `http://localhost:3000/auth/callback` too.
 6. Sign in with your provisioned email account or Google.
 
 Vercel Hobby is for personal, non-commercial use and subject to quotas. Supabase Free projects can pause if inactive. Back up your data periodically.

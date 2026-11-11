@@ -18,6 +18,7 @@ export default function LoginForm() {
   const params = useSearchParams()
   const next = params.get('next')
   const destination = next?.startsWith('/') && !next.startsWith('//') ? next : '/dashboard'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, '') || (typeof window !== 'undefined' ? window.location.origin : '')
 
   function clearNotices() { setError(''); setMessage('') }
 
@@ -29,7 +30,7 @@ export default function LoginForm() {
 
     if (mode === 'forgot') {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${location.origin}/auth/callback?next=/reset-password`,
+        redirectTo: `${siteUrl}/auth/callback?next=/reset-password`,
       })
       if (error) setError(error.message)
       else setMessage('If an account exists for this email, a password reset link is on its way.')
@@ -46,9 +47,14 @@ export default function LoginForm() {
     clearNotices()
     const { error } = await createClient().auth.signInWithOAuth({
       provider: 'google',
-      options: { redirectTo: `${location.origin}/auth/callback?next=${encodeURIComponent(destination)}` },
+      options: { redirectTo: `${siteUrl}/auth/callback?next=${encodeURIComponent(destination)}` },
     })
-    if (error) { setError(error.message); setBusy(false) }
+    if (error) {
+      setError(error.message.toLowerCase().includes('provider is not enabled')
+        ? 'Google sign-in is not enabled for this Supabase project. Enable Google in Authentication → Providers, then try again.'
+        : error.message)
+      setBusy(false)
+    }
   }
 
   return <div className="auth-form-wrap">
