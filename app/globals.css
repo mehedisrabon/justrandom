@@ -12,3 +12,87 @@
 @media(max-width:1150px){.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.library-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-grid{grid-template-columns:1fr}.sidebar{width:215px}}
 @media(max-width:720px){.auth-layout{grid-template-columns:1fr}.auth-aside{min-height:285px;padding:24px}.auth-hero{margin:30px 0 10px}.auth-hero h1{font-size:37px;margin:13px 0}.auth-hero>p{font-size:12px;line-height:1.55}.auth-quote,.auth-foot{display:none}.auth-panel{padding:38px 24px}.app-layout{display:block}.sidebar{height:auto;position:static;width:100%;padding:12px 15px;border-right:0;border-bottom:1px solid var(--line)}.brand{padding:0 0 10px}.sidebar-nav{display:flex;overflow:auto;gap:4px}.sidebar-nav a{white-space:nowrap;padding:8px;font-size:11px;gap:6px}.nav-heading,.sidebar-bottom{display:none}.topbar{padding:0 18px;height:53px}.main-content{padding:28px 18px 45px}.page-header{align-items:flex-start;flex-direction:column}.page-header h1{font-size:30px}.stats-grid{gap:9px}.stat-card{padding:15px}.stat-number{font-size:31px}.stat-top{font-size:10px}.stat-detail{font-size:10px}.panel{padding:18px}.library-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.detail-grid,.question-grid,.passage-list{grid-template-columns:1fr 1fr}.form-footer{align-items:stretch;flex-direction:column}.form-footer button{width:100%}}
 @media(max-width:430px){.form-grid,.question-grid,.passage-list{grid-template-columns:1fr}.detail-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* Account access */
+.google-button{width:100%;min-height:47px;display:flex;align-items:center;justify-content:center;gap:11px;margin-top:27px;background:#fff;border:1px solid #dce6dd;border-radius:10px;color:#33473d;font-weight:700;transition:border-color .18s,background .18s,transform .18s}
+.google-button:hover{border-color:#9bb6a4;background:#fbfdfb;transform:translateY(-1px)}
+.google-button:disabled{opacity:.6;cursor:wait}
+.auth-divider{display:flex;align-items:center;gap:12px;margin:21px 0 0;color:#9ba89f;font-size:11px}
+.auth-divider:before,.auth-divider:after{content:'';height:1px;background:#e9eee8;flex:1}
+.auth-form{gap:17px;margin-top:22px}
+.auth-form input,.password-form input{min-height:48px;border-radius:10px;transition:border-color .18s,box-shadow .18s}
+.auth-form .btn{min-height:48px;border-radius:10px;margin-top:3px}
+.forgot-link,.back-to-login{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;margin-top:18px;background:none;border:0;color:#34795f;font-size:12px;font-weight:700}
+.recovery-message{display:flex;align-items:flex-start;gap:8px;line-height:1.55}
+.recovery-message svg{flex:none;margin-top:1px}
+.auth-security{margin-top:34px}
+.reset-page{min-height:100vh;padding:30px clamp(20px,6vw,80px);background:radial-gradient(ellipse at 50% 38%,#fff 0,#f7faf6 66%);display:flex;align-items:center;justify-content:center;position:relative}
+.reset-brand{position:absolute;top:34px;left:clamp(20px,6vw,80px);display:flex;align-items:center;gap:9px;color:#1d4d3e;font-weight:800;letter-spacing:1.4px}
+.reset-brand span{font-size:23px}
+.reset-card{width:min(100%,500px);padding:34px;background:#fff;border:1px solid #e6ece6;border-radius:18px;box-shadow:0 18px 65px #2543320b}
+.reset-card .recovery-password-panel{padding:0;border:0;box-shadow:none}
+.password-panel{max-width:770px;padding:30px}
+.password-panel .panel-heading{margin-bottom:12px}
+.password-panel .panel-heading h2{margin-top:8px}
+.password-icon,.success-mark{width:44px;height:44px;display:grid;place-items:center;flex:none;background:#edf4ef;border-radius:12px;color:#347359}
+.password-help{font-size:13px;line-height:1.7;max-width:570px}
+.password-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin-top:22px;align-items:end}
+.password-form label{display:flex;flex-direction:column;gap:9px;color:#34443c;font-size:12px;font-weight:700}
+.password-form input{width:100%;padding:11px 13px;border:1px solid #dce6dd;color:#263c34}
+.password-form input:focus{border-color:#487964;box-shadow:0 0 0 3px #48796419}
+.password-form .alert{grid-column:1/-1;margin:0}
+.password-form .btn{min-height:46px;justify-self:start}
+.password-success{display:flex;align-items:center;gap:14px;padding:8px 0}
+.password-success h2{font-family:Georgia,serif;font-size:23px;font-weight:500;margin:0 0 6px}
+.password-success p{margin:0;color:#829189;font-size:13px;line-height:1.6}
+.settings-grid{display:grid;grid-template-columns:minmax(240px,.75fr) minmax(0,1.5fr);gap:18px;align-items:start}
+.account-card{display:flex;align-items:flex-start;gap:14px;padding:25px}
+.account-avatar{width:48px;height:48px;display:grid;place-items:center;flex:none;border-radius:15px;background:#e6f0e8;color:#2c6d56;font-size:19px;font-weight:800}
+.account-card .eyebrow{font-size:9px;letter-spacing:1.3px}
+.account-card h2{font-size:15px;letter-spacing:0;margin:8px 0;overflow-wrap:anywhere}
+.account-card p{font-size:12px;line-height:1.6;margin:0}
+
+/* A calmer, more legible workspace */
+:root{--ink:#20352c;--muted:#77877e;--line:#e5ebe5;--green:#28634f;--bg:#f5f8f4}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px;line-height:1.5}
+.app-layout{background:var(--bg)}
+.sidebar{width:254px;padding:25px 17px 20px;background:#fff;border-color:#e9eee8;box-shadow:3px 0 24px #26412e04}
+.brand{padding-bottom:31px;font-size:17px}
+.brand-symbol{width:36px;height:36px;display:grid;place-items:center;background:#edf4ef;border-radius:11px;font-size:23px}
+.nav-heading{margin:8px 0 11px;font-size:9px}
+.sidebar-nav{gap:4px}
+.sidebar-nav a{min-height:44px;border-radius:10px;color:#607268;transition:background .16s,color .16s}
+.sidebar-nav a:hover{background:#f0f5f0}
+.sidebar-nav a[aria-current="page"]{background:#eaf3ec;color:#245849;font-weight:750}
+.sidebar-tip{padding:17px;border:1px solid #e5eee6}
+.profile-line{margin:19px 0 5px;padding-top:16px;border-top:1px solid #eff2ee}
+.logout{border-radius:8px;padding:10px 8px;transition:background .16s,color .16s}
+.logout:hover{background:#f6f7f4;color:#a25349}
+.topbar{height:64px;padding:0 clamp(22px,4vw,58px);color:#819188;background:#fff;letter-spacing:1px}
+.main-content{max-width:1360px;padding:38px clamp(20px,4vw,58px) 64px}
+.page-header{margin-bottom:25px}
+.page-header h1{font-family:Georgia,serif;font-size:clamp(30px,3vw,38px);line-height:1.2;margin:9px 0}
+.page-header p{font-size:13px;max-width:650px}
+.eyebrow{letter-spacing:1.5px;font-size:9px}
+.stats-grid{gap:13px}
+.stat-card,.panel,.book-card{border-color:#e7ece6;border-radius:13px;box-shadow:0 3px 12px #21392b05}
+.stat-card{padding:20px 21px}
+.stat-number{font-family:Georgia,serif;font-size:38px}
+.panel{padding:22px}
+.panel h2{font-size:21px}
+.dashboard-grid{gap:15px;margin-top:16px}
+.dashboard-grid.bottom-grid{margin-top:15px}
+.chart-area{height:250px}
+.text-link{color:#2e7156}
+.text-link:hover{color:#174531;text-decoration:underline;text-underline-offset:3px}
+.library-grid{gap:13px}
+.book-card{padding:19px}
+.book-table-row,.book-table-head{padding-top:8px;padding-bottom:8px}
+.practice-form .panel,.practice-form{scroll-margin-top:80px}
+.btn{border-radius:10px;transition:background .18s,border-color .18s,transform .18s}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-outline:hover{background:#f4f8f4;border-color:#b9ccbd}
+.data-table tbody tr:hover{background:#fafcf9}
+.empty-inline{color:#839188}
+@media(max-width:900px){.settings-grid{grid-template-columns:1fr}.account-card{align-items:center}}
+@media(max-width:720px){.sidebar{padding:12px 14px 10px}.brand{padding-bottom:9px}.brand-symbol{width:30px;height:30px;font-size:20px}.sidebar-nav a[aria-current="page"]{background:#eaf3ec}.topbar{padding:0 17px}.main-content{padding-top:24px}.page-header{margin-bottom:20px}.panel{padding:17px}.stats-grid{gap:10px}.password-panel{padding:19px}.password-form{grid-template-columns:1fr}.password-form .btn{width:100%}.reset-card{padding:25px 20px}}

@@ -11,8 +11,9 @@ A personal IELTS Academic tracker with verified Supabase Auth, Postgres row-leve
 1. Create a new Supabase project.
 2. Open **SQL Editor**, paste the entire `supabase/schema.sql` file, and run it **once**.
 3. In **Authentication → Providers → Email**, enable email confirmations. (Recommended; default email configuration is rate-limited.)
-4. In **Authentication → URL Configuration**, add `http://localhost:3000/auth/callback` to the allowed redirect URLs. Set Site URL to `http://localhost:3000` during development.
-5. Copy your **Project URL** and **Publishable key** from Supabase project settings. Never put a service-role or secret key into `NEXT_PUBLIC_*` variables.
+4. To enable Google sign-in, enable **Authentication → Providers → Google** and enter the OAuth client ID and secret from Google Cloud Console. Add Supabase’s callback URL shown in the provider settings to the Google OAuth client’s authorized redirect URIs.
+5. In **Authentication → URL Configuration**, set Site URL to `http://localhost:3000` during development and add `http://localhost:3000/auth/callback` to the allowed redirect URLs. Also allow your deployed `/auth/callback` URL in production.
+6. Copy your **Project URL** and **Publishable key** from Supabase project settings. Never put a service-role or secret key into `NEXT_PUBLIC_*` variables.
 
 ## 2. Local development
 ```bash
@@ -21,7 +22,7 @@ cp .env.example .env.local
 # Edit .env.local: set your Supabase URL and publishable key.
 npm run dev
 ```
-Visit http://localhost:3000 and create your account. Confirm your email to log in.
+Visit http://localhost:3000 and sign in with an existing provisioned account or Google. Account creation is disabled in the app UI.
 
 ## 3. Free deployment
 1. Push the project to a **private GitHub repository**. `.env.local` is ignored.
@@ -29,12 +30,13 @@ Visit http://localhost:3000 and create your account. Confirm your email to log i
 3. Set environment variables `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` in Vercel.
 4. Deploy. Your URL will be `https://YOUR-PROJECT.vercel.app`.
 5. In Supabase **Auth → URL Configuration**, set the **Site URL** to your deployed URL and add `https://YOUR-PROJECT.vercel.app/auth/callback` to the redirect allowlist.
-6. Register an account using your personal email. Sign in after email verification.
+6. Sign in with your provisioned email account or Google.
 
 Vercel Hobby is for personal, non-commercial use and subject to quotas. Supabase Free projects can pause if inactive. Back up your data periodically.
 
 ## Supported features
-- Per-user Supabase email/password authentication with server-side session cookies.
+- Per-user Supabase email/password and Google OAuth authentication with server-side session cookies.
+- Email password recovery and signed-in password changes from Account Settings.
 - Postgres RLS that restricts all practice and breakdown data to the current user.
 - Cambridge IELTS 1–21, four tests/book, four skills/test (336 checkboxes inferred from sessions).
 - Multiple attempts per test; completion stays checked if at least one attempt exists.
@@ -47,7 +49,6 @@ Vercel Hobby is for personal, non-commercial use and subject to quotas. Supabase
 ## Important limitations / improvements
 - Reading and Listening bands use general practice conversion tables, not official per-book answer-key mappings.
 - The completion tracker includes Books 1–21 by user request; older books and their editions can vary in format. The app tracks tests rather than reproducing copyrighted questions.
-- App has no password-reset UI: use Supabase Auth dashboard now or implement a reset-flow before sharing publicly.
 - Charts use up to the 1,000 most recent sessions. Pagination is needed for much larger histories.
 - Single request inserts a practice session then its breakdown; on failure it attempts rollback. For strict atomicity, replace this with a Postgres RPC transaction.
 - For high-traffic public production use, add rate limiting, audit logging, and automated tests. Supabase Auth handles credential hashing, email confirmation and sessions, but strong security also requires correct Auth settings and regular dependency updates.
