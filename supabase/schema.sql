@@ -38,6 +38,7 @@ alter table public.practice_breakdowns enable row level security;
 
 create policy "Owner reads sessions" on public.practice_sessions for select to authenticated using (user_id = (select auth.uid()));
 create policy "Owner inserts sessions" on public.practice_sessions for insert to authenticated with check (user_id = (select auth.uid()));
+create policy "Owner updates sessions" on public.practice_sessions for update to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
 create policy "Owner deletes sessions" on public.practice_sessions for delete to authenticated using (user_id = (select auth.uid()));
 create policy "Owner reads breakdowns" on public.practice_breakdowns for select to authenticated using (user_id = (select auth.uid()));
 create policy "Owner inserts breakdowns" on public.practice_breakdowns for insert to authenticated with check (
@@ -45,4 +46,5 @@ create policy "Owner inserts breakdowns" on public.practice_breakdowns for inser
     select 1 from public.practice_sessions s where s.id = session_id and s.user_id = (select auth.uid())
   )
 );
+create policy "Owner updates breakdowns" on public.practice_breakdowns for update to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
 create policy "Owner deletes breakdowns" on public.practice_breakdowns for delete to authenticated using (user_id = (select auth.uid()));
